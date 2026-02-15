@@ -17,3 +17,23 @@ Prototype RAG chatbot for a **German PDF product catalog**:
   - Fully works without any LLM (offline-first fallback)
 
 ## Repo Structure
+
+## Setup
+### 1) Create & activate venv (Windows PowerShell)
+```powershell
+cd "C:\Users\hp\Desktop\Agentic RAG Chatbot"
+python -m venv .venv
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
+.\.venv\Scripts\Activate.ps1
+
+pip install -r requirements.txt
+
+streamlit run app.py --server.port 8502
+
+$env:GROQ_API_KEY="YOUR_KEY_HERE"
+$env:GROQ_MODEL="llama-3.1-8b-instant"
+
+pip install groq
+
+streamlit run app.py --server.port 8502
+
